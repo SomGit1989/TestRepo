@@ -10,6 +10,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using TestCoreApi.Bc.Implementations;
+using TestCoreApi.Bc.Interfaces;
 
 namespace TestCoreApi
 {
@@ -26,6 +28,7 @@ namespace TestCoreApi
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            services.AddScoped<IEmployeeBc, EmployeeBc>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
